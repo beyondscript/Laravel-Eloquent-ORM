@@ -56,7 +56,7 @@ class Inputtest extends Controller
         $update = Testinput::findorfail($id);
         return view('update', ['update' => $update]);
     }
-    public function update2(Request $req, $id){
+    public function update2(Request $req){
         $validatedData = $req->validate([
             'text' => ['required', 'string', 'max:255'],
             'number' => ['required', 'integer', 'min:1'],
@@ -72,7 +72,7 @@ class Inputtest extends Controller
             'image.image' => 'Image must be an image',
         ]);
 
-        $testinput = Testinput::findorfail($id);
+        $testinput = Testinput::findorfail($req->id);
         $image = request()->file('image');
         if($image){
             $old_image=$testinput->image;
@@ -99,8 +99,8 @@ class Inputtest extends Controller
             return redirect()->route('view')->with('message','Data successfully updated');
         }
     }
-    public function delete($id){
-        $delete = Testinput::findorfail($id);
+    public function delete(Request $req){
+        $delete = Testinput::findorfail($req->id);
         $image  = $delete->image;
         if(file_exists($image)){
             unlink($image);
@@ -139,7 +139,7 @@ class Inputtest extends Controller
         $first_tables = Testinput::all();
         return view('update2', ['update' => $update, 'first_tables' => $first_tables]);
     }
-    public function update4(Request $req, $id){
+    public function update4(Request $req){
         $validatedData = $req->validate([
             'text2' => ['required', 'string', 'max:255'],
             'ti_id' => ['required'],
@@ -151,14 +151,14 @@ class Inputtest extends Controller
             'ti_id.required' => 'Text is required'
         ]);
 
-        $secondtestinput = Secondtestinput::findorfail($id);
+        $secondtestinput = Secondtestinput::findorfail($req->id);
         $secondtestinput -> text2 = $req -> text2;
         $secondtestinput -> ti_id = $req -> ti_id;
         $secondtestinput -> save();
         return redirect()->route('view2')->with('message','Data successfully updated');
     }
-    public function delete2($id){
-        Secondtestinput::findorfail($id)->delete();
+    public function delete2(Request $req){
+        Secondtestinput::findorfail($req->id)->delete();
         return redirect()->route('view2')->with('error','Data successfully deleted');
     }
 }

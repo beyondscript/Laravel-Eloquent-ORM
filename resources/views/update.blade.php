@@ -3,9 +3,10 @@
     @include('partials.header')
     <div class="main">
         <h2 class="main_head">Update data of {{ $update -> text }}</h2>
-        <form class="main_form" method="post" action="{{ route('update', $update->id) }}" enctype="multipart/form-data">
+        <form class="main_form" method="post" action="{{ route('update2') }}" enctype="multipart/form-data">
             @method('patch')
             @csrf
+            <input type="hidden" name="id" value="{{ $update->id }}">
             <div class="form_section">
                 <label class="lebel_section" for="text">Text <span style="color:red">*</span></label>
                 <input class="input_section @error('text') is-invalid @enderror" id="text" type="text" name="text" value="{{ $update -> text }}" placeholder="Please enter the text">
