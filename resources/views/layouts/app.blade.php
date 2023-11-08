@@ -3,7 +3,7 @@
 	<head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Laravel Eloquent ORM</title>
+	    <title>{{config('app.name')}}</title>
 	    <link rel="icon" type="image/x-icon" href="{{ asset('images/icons/favicon.webp') }}">
 
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
@@ -19,6 +19,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	    <script src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.13.1/datatables.min.js"></script>
+
+	    @yield('scripts')
+	    
 		<script>
 		  	@if(Session::has('message'))
 		  		toastr.options =
@@ -52,18 +55,6 @@
 			  	}
 		  		toastr.warning("{{ session('warning') }}");
 		  	@endif
-		</script>
-		<script>
-			$(document).ready( function () {
-			    $('#table').DataTable({
-			    	scrollX: true,
-			    	"pagingType": "simple",
-				    "drawCallback": function( settings ) {
-				        document.getElementById('table_previous').querySelector('a').innerHTML = '<i class="fa fa-angle-left"></i>';
-				        document.getElementById('table_next').querySelector('a').innerHTML = '<i class="fa fa-angle-right"></i>';
-				    }
-			    });
-			});
 		</script>
 	</body>
 </html>

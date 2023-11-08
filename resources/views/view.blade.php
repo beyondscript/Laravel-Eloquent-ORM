@@ -59,3 +59,18 @@
     </div>
     @include('partials.footer')
 @endsection
+
+@section('scripts')
+    <script>
+        $(document).ready( function () {
+            $('#table').DataTable({
+                scrollX: true,
+                "pagingType": "simple",
+                "drawCallback": function( settings ) {
+                    document.getElementById('table_previous').querySelector('a').innerHTML = '<i class="fa fa-angle-left"></i>';
+                    document.getElementById('table_next').querySelector('a').innerHTML = '<i class="fa fa-angle-right"></i>';
+                }
+            });
+        });
+    </script>
+@endsection
