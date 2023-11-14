@@ -4,7 +4,7 @@
 	Laravel Eloquent ORM
 </p>
 
-## About Laravel Eloquent ORM r
+## About Laravel Eloquent ORM
 
 Laravel Eloquent ORM is a web application which was designed by using HTML, CSS and JavaScript and developed by using PHP and Laravel framework.
 
