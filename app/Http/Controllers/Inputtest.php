@@ -76,9 +76,6 @@ class Inputtest extends Controller
         $image = request()->file('image');
         if($image){
             $old_image=$testinput->image;
-            if(file_exists($old_image)){
-                unlink($old_image);
-            }
             $name = hexdec(uniqid());
             $fullname = $name.'.webp';
             $path = 'images/testinputs/images/';
@@ -86,6 +83,9 @@ class Inputtest extends Controller
             $resize_image=Image::make($image->getRealPath());
             $resize_image->resize(300,300);
             $resize_image->save('images/testinputs/images/'.$fullname);
+            if(file_exists($old_image)){
+                unlink($old_image);
+            }
             $testinput -> text = $req -> text;
             $testinput -> number = $req -> number;
             $testinput -> image = $url;
