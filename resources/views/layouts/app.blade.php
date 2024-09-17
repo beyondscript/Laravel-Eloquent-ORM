@@ -6,7 +6,7 @@
 	    <meta name="robots" content="noindex, nofollow">
   		<meta property="og:image" content="{{ asset('images/icons/facebookimage.png') }}">
 	    <title>{{config('app.name')}}</title>
-	    <link rel="icon" type="image/x-icon" href="{{ asset('images/icons/favicon.webp') }}">
+	    <link rel="icon" type="image/webp" href="{{ asset('images/icons/favicon.webp') }}">
 
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
