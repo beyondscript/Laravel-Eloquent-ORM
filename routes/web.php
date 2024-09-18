@@ -20,16 +20,16 @@ Route::middleware(['www'])->group(function () {
         return view('welcome');
     })->name('welcome');
 
-    Route::post('/add', [Inputtest::class, 'add'])->name('add');
-    Route::get('/view', [Inputtest::class, 'view'])->name('view');
-    Route::get('/update/data/{id}', [Inputtest::class, 'update'])->name('update');
-    Route::patch('/update/data', [Inputtest::class, 'update2'])->name('update2');
-    Route::delete('/delete/data', [Inputtest::class, 'delete'])->name('delete');
+    Route::post('/store-in-first-table', [Inputtest::class, 'add'])->name('add');
+    Route::get('/show-first-table-data', [Inputtest::class, 'view'])->name('view');
+    Route::get('/edit-from-first-table/{id}', [Inputtest::class, 'update'])->name('update');
+    Route::patch('/update-from-first-table', [Inputtest::class, 'update2'])->name('update2');
+    Route::delete('/destroy-from-first-table', [Inputtest::class, 'delete']);
 
-    Route::get('/add_2', [Inputtest::class, 'add2'])->name('add2');
-    Route::post('/add_2', [Inputtest::class, 'add3'])->name('add3');
-    Route::get('/view_2', [Inputtest::class, 'view2'])->name('view2');
-    Route::get('/update/data_2/{id}', [Inputtest::class, 'update3'])->name('update3');
-    Route::patch('/update/data_2', [Inputtest::class, 'update4'])->name('update4');
-    Route::delete('/delete/data_2', [Inputtest::class, 'delete2'])->name('delete2');
+    Route::get('/store-data-in-second-table', [Inputtest::class, 'add2'])->name('add2');
+    Route::post('/store-in-second-table', [Inputtest::class, 'add3'])->name('add3');
+    Route::get('/show-second-table-data', [Inputtest::class, 'view2'])->name('view2');
+    Route::get('/edit-from-second-table/{id}', [Inputtest::class, 'update3'])->name('update3');
+    Route::patch('/update-from-second-table', [Inputtest::class, 'update4'])->name('update4');
+    Route::delete('/destroy-from-second-table', [Inputtest::class, 'delete2']);
 });

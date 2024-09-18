@@ -35,7 +35,7 @@
                             @endif
                             <td>
                                 <a class="table_link" href="{{ route('update', $view->id) }}"><i class="fa fa-edit"></i></a>
-                                <form style="display: inline-flex;" method="post" action="{{URL::to('/delete/data')}}">
+                                <form style="display: inline-flex;" method="post" action="{{URL::to('/destroy-from-first-table')}}">
                                     @method('DELETE')
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $view->id }}">
