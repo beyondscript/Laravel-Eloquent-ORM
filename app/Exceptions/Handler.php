@@ -52,5 +52,17 @@ class Handler extends ExceptionHandler
                 return redirect()->back()->with('error','Something went wrong');
             }
         });
+
+        $this->renderable(function (\Exception $e, $request) {
+            if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+                if(env('APP_ENV') != 'local'){
+                    if (!$request->wantsJson() && !preg_match('/^www\./', $request->host())) {
+                        $wwwUrl = $request->getScheme() . '://www.' . $request->getHost() . $request->getRequestUri();
+
+                        return redirect()->to($wwwUrl, 301);
+                    }
+                }
+            }
+        });
     }
 }

@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://github.com/beyondscript/Laravel-Eloquent-ORM/blob/main/public/images/icons/favicon.webp" width="60" height="60" margin-left="auto" margin-right="auto" alt="Logo">
+	<img src="https://github.com/beyondscript/Laravel-Eloquent-ORM/blob/main/public/images/icons/favicon.png" width="60" height="60" margin-left="auto" margin-right="auto" alt="Logo">
 	<br>
 	Laravel Eloquent ORM
 </p>
