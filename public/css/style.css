@@ -175,12 +175,11 @@ th{
   background-image: none !important;
   padding: 15px 15px 15px 7px !important;
 }
-
 #toast-container .toast-close-button{
   top: -.7em !important;
 }
 @media only screen and (max-width: 320px) {
-    #toast-container > .toast {
-        width: 258px;
-    }
+  #toast-container > .toast {
+    width: 238px;
+  }
 }
