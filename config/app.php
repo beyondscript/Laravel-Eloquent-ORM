@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Laravel Eloquent ORM') ?: 'Laravel Eloquent ORM',
 
     /*
     |--------------------------------------------------------------------------
