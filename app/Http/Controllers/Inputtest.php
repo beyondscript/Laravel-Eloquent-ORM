@@ -31,6 +31,9 @@ class Inputtest extends Controller
             $name = hexdec(uniqid());
             $fullname = $name.'.webp';
             $path = 'images/testinputs/images/';
+            if(!file_exists($path)){
+                mkdir($path, 0777, true);
+            }
             $url = $path.$fullname;
             $resize_image=Image::make($image->getRealPath());
             $resize_image->resize(300,300);
@@ -79,6 +82,9 @@ class Inputtest extends Controller
             $name = hexdec(uniqid());
             $fullname = $name.'.webp';
             $path = 'images/testinputs/images/';
+            if(!file_exists($path)){
+                mkdir($path, 0777, true);
+            }
             $url = $path.$fullname;
             $resize_image=Image::make($image->getRealPath());
             $resize_image->resize(300,300);
