@@ -15,7 +15,7 @@ use App\Http\Controllers\Inputtest;
 |
 */
 
-Route::middleware(['www'])->group(function () {
+Route::group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('welcome');
